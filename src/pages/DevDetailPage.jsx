@@ -80,7 +80,7 @@ const DevDetailPage = () => {
             Come Contattarmi
           </h2>
           <div className="flex flex-col items-center gap-4">
-            <div className="w-80 max-w-full bg-black/90 border-2 border-red-600 rounded-lg shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] divide-y divide-red-600 px-2">
+            <div className="w-full max-w-xl bg-black/90 border-2 border-red-600 rounded-lg shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] divide-y divide-red-600 px-2 text-left">
               {contacts.map((contact, index) => (
                 <a
                   key={index}
@@ -91,12 +91,12 @@ const DevDetailPage = () => {
                   }
                   target={contact.type !== "Email" ? "_blank" : ""}
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 hover:bg-red-600/20 transition-colors text-white text-left"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-red-600/20 transition-colors text-white"
                 >
                   <span className="text-xl">{contact.icon}</span>
-                  <div>
+                  <div className="min-w-0">
                     <div className="font-medium">{contact.type}</div>
-                    <div className="text-sm text-gray-300 truncate">
+                    <div className="text-sm text-gray-300 break-all">
                       {contact.value}
                     </div>
                   </div>
@@ -104,7 +104,7 @@ const DevDetailPage = () => {
               ))}
             </div>
             <a
-              href="/Zampieri Simone cv(2).pdf"
+              href="/Zampieri Simone cv (2).pdf"
               download
               className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold mt-2 inline-block"
             >
