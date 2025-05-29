@@ -8,9 +8,17 @@ const DevDetailPage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const contacts = [
-    { type: 'Email', value: 'zampierisimone5@gmail.com', icon: '📧' },
-    { type: 'LinkedIn', value: 'https://www.linkedin.com/in/simone-zampieri-43103a331/', icon: <FaLinkedin /> },
-    { type: 'GitHub', value: 'https://github.com/SimoneZampieri', icon: <FaGithub /> }
+    { type: "Email", value: "zampierisimone5@gmail.com", icon: "📧" },
+    {
+      type: "LinkedIn",
+      value: "https://www.linkedin.com/in/simone-zampieri-43103a331/",
+      icon: <FaLinkedin />,
+    },
+    {
+      type: "GitHub",
+      value: "https://github.com/SimoneZampieri",
+      icon: <FaGithub />,
+    },
   ];
 
   return (
@@ -71,36 +79,37 @@ const DevDetailPage = () => {
           <h2 className="text-2xl font-bold text-white mb-6">
             Come Contattarmi
           </h2>
-          <div className="relative inline-block">
-            <button 
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)} 
-              className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition-colors flex items-center gap-2"
-            >
-              Contattami
-              <span className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}>
-                ▼
-              </span>
-            </button>
-
-            {isDropdownOpen && (
-              <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-64 bg-black/90 border-2 border-red-600 rounded-lg shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] z-50">
-                {contacts.map((contact, index) => (
-                  <a
-                    key={index}
-                    href={contact.type === 'Email' ? `mailto:${contact.value}` : contact.value}
-                    target={contact.type !== 'Email' ? '_blank' : ''}
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 hover:bg-red-600/20 transition-colors text-white text-left"
-                  >
-                    <span className="text-xl">{contact.icon}</span>
-                    <div>
-                      <div className="font-medium">{contact.type}</div>
-                      <div className="text-sm text-gray-300 truncate">{contact.value}</div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-80 max-w-full bg-black/90 border-2 border-red-600 rounded-lg shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] divide-y divide-red-600 px-2">
+              {contacts.map((contact, index) => (
+                <a
+                  key={index}
+                  href={
+                    contact.type === "Email"
+                      ? `mailto:${contact.value}`
+                      : contact.value
+                  }
+                  target={contact.type !== "Email" ? "_blank" : ""}
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-red-600/20 transition-colors text-white text-left"
+                >
+                  <span className="text-xl">{contact.icon}</span>
+                  <div>
+                    <div className="font-medium">{contact.type}</div>
+                    <div className="text-sm text-gray-300 truncate">
+                      {contact.value}
                     </div>
-                  </a>
-                ))}
-              </div>
-            )}
+                  </div>
+                </a>
+              ))}
+            </div>
+            <a
+              href="/Zampieri Simone cv(2).pdf"
+              download
+              className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold mt-2 inline-block"
+            >
+              Scarica il mio CV
+            </a>
           </div>
         </div>
       </div>
