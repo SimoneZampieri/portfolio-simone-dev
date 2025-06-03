@@ -1,7 +1,25 @@
 import React, { useState } from "react";
 import ImageCarousel from "../components/ImageCarousel";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaGitAlt, FaLinkedin } from "react-icons/fa";
+import {
+  FaGithub,
+  FaReact,
+  FaCss3Alt,
+  FaJs,
+  FaHtml5,
+  FaBootstrap,
+} from "react-icons/fa";
+import { SiTailwindcss, SiTypescript } from "react-icons/si";
+const techStack = [
+  { name: "React", icon: <FaReact className="text-cyan-400" /> },
+  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+  { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
+  { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
+  { name: "BootStrap", icon: <FaBootstrap className="text-blue-300" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="text-sky-600" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-sky-300" /> },
+];
 
 const DevDetailPage = () => {
   const images = ["/alfa.jpg", "/124.jpg"];
@@ -49,19 +67,25 @@ const DevDetailPage = () => {
 
         {/* Experience Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-black/20 border-2 border-red-600 rounded-lg p-6 hover:shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] transition-shadow">
-            <h3 className="text-red-600 text-xl font-bold mb-4">
-              Competenze Tecniche
+          {/* Tech Stack Grid */}
+          <div className="bg-black/20 border-2 border-red-600 rounded-lg p-6 hover:shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] transition-shadow flex flex-col">
+            <h3 className="text-red-600 text-xl font-bold mb-6 text-center">
+              Stack Tecnologico
             </h3>
-            <ul className="text-gray-300 space-y-2">
-              <li>• React & Modern JavaScript</li>
-              <li>• Tailwind CSS & Styled Components</li>
-              <li>• Redux & State Management</li>
-              <li>• Git & Version Control</li>
-              <li>• Responsive Design</li>
-            </ul>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
+              {techStack.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="flex flex-col items-center bg-black/40 border border-red-600 rounded-xl p-4 shadow-md hover:scale-105 transition-transform"
+                >
+                  <span className="text-4xl mb-2">{tech.icon}</span>
+                  <span className="text-white font-medium">{tech.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
+          {/* Soft Skills Card */}
           <div className="bg-black/20 border-2 border-red-600 rounded-lg p-6 hover:shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] transition-shadow">
             <h3 className="text-red-600 text-xl font-bold mb-4">Soft Skills</h3>
             <ul className="text-gray-300 space-y-2">
