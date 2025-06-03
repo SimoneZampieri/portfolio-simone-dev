@@ -1,7 +1,9 @@
 import React from "react";
 import { FaFlagCheckered } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <section className="my-24">
       <div className="max-w-6xl mx-auto px-4">
@@ -54,6 +56,14 @@ const Home = () => {
               Finish
             </span>
           </div>
+        </div>
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={() => navigate("/about")}
+            className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-800 transition-colors font-semibold shadow-lg"
+          >
+            Scopri chi sono
+          </button>
         </div>
       </div>
     </section>
