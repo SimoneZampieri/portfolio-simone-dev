@@ -1,6 +1,30 @@
 import React from "react";
 import { FaFlagCheckered } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import ProjectCards from "../components/ProjectCards";
+
+const projects = [
+  {
+    title: "Comics Generator",
+    description: "Un generatore di fumetti basato su 50 fumetti randomici",
+    link: "https://comic-generator-sand.vercel.app/",
+    image: "/comics.png",
+  },
+  {
+    title: "GMail Debloater",
+    description:
+      "Una estensione per GMail che permette di eliminare e disiscriversi automaticamente da newsletter indesiderate",
+    link: "https://github.com/SimoneZampieri/gmail-debloater",
+    image: "/mail.png",
+  },
+  {
+    title: "BoolBnB",
+    description:
+      "Una replica creativa dell interfaccia di Airbnb, ultimata durante il mio percorso di studi in Boolean",
+    link: "https://github.com/RobertoFloris/react-bool-beb",
+    image: "/bnb.png",
+  },
+];
 
 const Home = () => {
   const navigate = useNavigate();
@@ -53,7 +77,7 @@ const Home = () => {
               <FaFlagCheckered className="text-red-600 text-2xl" />
             </div>
             <span className="mt-3 text-white text-sm font-medium text-center tracking-wide">
-              Finish
+              Diventare Esperto
             </span>
           </div>
         </div>
@@ -65,6 +89,16 @@ const Home = () => {
             Scopri chi sono
           </button>
         </div>
+        <section className="mt-24">
+          <h3 className="text-3xl font-extrabold mb-10 text-white tracking-widest text-center uppercase ">
+            I miei Progetti
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCards key={index} {...project} />
+            ))}
+          </div>
+        </section>
       </div>
     </section>
   );
