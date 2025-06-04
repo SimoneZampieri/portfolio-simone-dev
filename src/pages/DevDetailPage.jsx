@@ -23,7 +23,6 @@ const techStack = [
 
 const DevDetailPage = () => {
   const images = ["/alfa.jpg", "/124.jpg"];
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const contacts = [
     { type: "Email", value: "zampierisimone5@gmail.com", icon: "📧" },
