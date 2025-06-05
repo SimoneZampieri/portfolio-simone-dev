@@ -64,6 +64,28 @@ const DevDetailPage = () => {
           </div>
         </div>
 
+        {/* Learning Journey Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-extrabold text-red-600 mb-4 text-center font-audiowide">
+            Il Mio Percorso di Apprendimento
+          </h2>
+          <p className="text-gray-300 text-lg text-center max-w-3xl mx-auto">
+            La mia avventura nello sviluppo web è iniziata con la curiosità e la
+            voglia di mettermi in gioco, durante la pandemia infatti ho iniziato
+            ad approfondire le basi di HTML e CSS, per poi iniziare un percorso
+            in Boolean ad ottobre 2024, che mi ha permesso di diventare un Web
+            Developer. Proprio come un pilota che affronta la sua prima pista.
+            Ho studiato con determinazione, affrontando ogni curva e ogni
+            ostacolo con passione.
+            <br />
+            <br />
+            Ogni nuova tecnologia è stata una tappa, ogni progetto una gara in
+            cui migliorare le mie performance. Oggi continuo a imparare e a
+            crescere, con la stessa grinta di chi vuole sempre abbassare il
+            proprio tempo sul giro!
+          </p>
+        </div>
+
         {/* Experience Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Tech Stack Grid */}

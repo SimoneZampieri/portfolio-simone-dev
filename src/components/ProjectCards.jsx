@@ -2,14 +2,15 @@ import React from "react";
 
 const ProjectCards = ({ title, description, link, image }) => {
   return (
-    <div className="bg-black/70 border-2 border-red-600 rounded-2xl shadow-lg p-6 flex flex-col hover:scale-105 transition-transform">
+    <div className="relative group bg-black/70 border-2 border-red-600 rounded-2xl shadow-lg p-6 flex flex-col hover:scale-105 transition-transform overflow-hidden">
       {image && (
         <img
           src={image}
           alt={title}
-          className="w-full h-40 object-cover rounded-lg mb-4 border border-red-600"
+          className="rounded-lg mb-4 object-cover h-40 w-full"
         />
       )}
+      <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity" />
       <h4 className="text-xl font-bold text-red-500 mb-2">{title}</h4>
       <p className="text-gray-300 mb-4">{description}</p>
       <a
