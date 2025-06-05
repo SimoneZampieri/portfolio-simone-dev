@@ -81,6 +81,16 @@ const Home = () => {
             </span>
           </div>
         </div>
+        <div className="my-16 flex flex-col items-center">
+          <blockquote className="text-2xl md:text-3xl font-audiowide text-red-500 text-center max-w-2xl mb-4">
+            "La velocità è utile solo se sai dove andare."
+          </blockquote>
+          <p className="text-gray-300 text-center max-w-xl">
+            Come nello sviluppo e nelle corse, punto sempre alla precisione,
+            alla crescita e all’innovazione. Ogni progetto è una nuova pista da
+            affrontare!
+          </p>
+        </div>
         <div className="flex justify-center mt-10">
           <button
             onClick={() => navigate("/about")}
@@ -89,6 +99,7 @@ const Home = () => {
             Scopri chi sono
           </button>
         </div>
+
         <section id="progetti" className="mt-24">
           <h3 className="text-3xl font-extrabold mb-10 text-white tracking-widest text-center uppercase ">
             I miei Progetti
