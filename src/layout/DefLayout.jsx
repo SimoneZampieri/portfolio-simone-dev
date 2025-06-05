@@ -10,7 +10,20 @@ const DefLayout = ({ children }) => {
           <h1 className="text-2xl font-bold">SIMONE ZAMPIERI</h1>
           <div className="flex gap-4">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => {
+                if (window.location.pathname !== "/") {
+                  navigate("/");
+                  setTimeout(() => {
+                    document
+                      .getElementById("progetti")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }, 300);
+                } else {
+                  document
+                    .getElementById("progetti")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="border border-red-600 px-6 py-2 rounded-full hover:bg-red-600/20 transition-colors"
             >
               Guarda i progetti

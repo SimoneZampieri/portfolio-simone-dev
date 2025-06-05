@@ -89,7 +89,7 @@ const Home = () => {
             Scopri chi sono
           </button>
         </div>
-        <section className="mt-24">
+        <section id="progetti" className="mt-24">
           <h3 className="text-3xl font-extrabold mb-10 text-white tracking-widest text-center uppercase ">
             I miei Progetti
           </h3>
