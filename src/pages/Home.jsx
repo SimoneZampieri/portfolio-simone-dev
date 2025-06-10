@@ -37,34 +37,59 @@ const Home = () => {
         </h3>
 
         {/* Timeline */}
-        <div className="relative bg-gradient-to-r from-black/70 via-black/60 to-black/70 border-4 border-red-600 rounded-full py-4 sm:py-6 px-2 sm:px-10 flex flex-col sm:flex-row items-center justify-between shadow-[0_0_24px_3px_rgba(255,0,60,0.25)] gap-4 sm:gap-0">
-          {/* Steps */}
-          {[
-            { label: "Partenza" },
-            { label: "Studi serrati" },
-            { label: "Pratica costante" },
-            {
-              label: "Diventare Esperto",
-              icon: <FaFlagCheckered className="text-red-600 text-2xl" />,
-            },
-          ].map((step, idx, arr) => (
-            <React.Fragment key={step.label}>
-              <div className="flex flex-col items-center w-24 sm:w-32 relative z-10">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black border-4 border-red-600 rounded-full shadow-[0_0_20px_4px_rgba(255,0,60,0.5)] flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_30px_6px_rgba(255,0,60,0.8)] animate-pulse">
-                  {step.icon}
+        <div>
+          {/* Desktop: horizontal timeline */}
+          <div className="hidden sm:flex relative bg-gradient-to-r from-black/70 via-black/60 to-black/70 border-4 border-red-600 rounded-full py-6 px-10 items-center justify-between shadow-[0_0_24px_3px_rgba(255,0,60,0.25)]">
+            {[
+              { label: "Partenza" },
+              { label: "Studi serrati" },
+              { label: "Pratica costante" },
+              {
+                label: "Diventare Esperto",
+                icon: <FaFlagCheckered className="text-red-600 text-2xl" />,
+              },
+            ].map((step, idx, arr) => (
+              <React.Fragment key={step.label}>
+                <div className="flex flex-col items-center w-32 relative z-10">
+                  <div className="w-16 h-16 bg-black border-4 border-red-600 rounded-full shadow-[0_0_20px_4px_rgba(255,0,60,0.5)] flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_30px_6px_rgba(255,0,60,0.8)] animate-pulse">
+                    {step.icon}
+                  </div>
+                  <span className="mt-3 text-white text-sm font-medium text-center tracking-wide">
+                    {step.label}
+                  </span>
                 </div>
-                <span className="mt-2 sm:mt-3 text-white text-xs sm:text-sm font-medium text-center tracking-wide">
-                  {step.label}
-                </span>
-              </div>
-              {idx < arr.length - 1 && (
-                <div className="hidden sm:block flex-1 border-t-4 border-dashed border-red-600 mx-2 -mt-4 z-0" />
-              )}
-              {idx < arr.length - 1 && (
-                <div className="block sm:hidden w-1 h-6 border-l-4 border-dashed border-red-600 my-2" />
-              )}
-            </React.Fragment>
-          ))}
+                {idx < arr.length - 1 && (
+                  <div className="flex-1 border-t-4 border-dashed border-red-600 mx-2 -mt-4 z-0" />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+          {/* Mobile: vertical timeline */}
+          <div className="flex sm:hidden flex-col items-center bg-gradient-to-b from-black/70 via-black/60 to-black/70 border-4 border-red-600 rounded-2xl py-4 px-2 shadow-[0_0_24px_3px_rgba(255,0,60,0.25)] gap-0 w-full max-w-xs mx-auto">
+            {[
+              { label: "Partenza" },
+              { label: "Studi serrati" },
+              { label: "Pratica costante" },
+              {
+                label: "Diventare Esperto",
+                icon: <FaFlagCheckered className="text-red-600 text-2xl" />,
+              },
+            ].map((step, idx, arr) => (
+              <React.Fragment key={step.label}>
+                <div className="flex flex-col items-center w-full relative z-10">
+                  <div className="w-12 h-12 bg-black border-4 border-red-600 rounded-full shadow-[0_0_20px_4px_rgba(255,0,60,0.5)] flex items-center justify-center animate-pulse">
+                    {step.icon}
+                  </div>
+                  <span className="mt-2 text-white text-xs font-medium text-center tracking-wide">
+                    {step.label}
+                  </span>
+                </div>
+                {idx < arr.length - 1 && (
+                  <div className="h-6 border-l-4 border-dashed border-red-600 my-1" />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
 
         <div className="my-10 sm:my-16 flex flex-col items-center">
