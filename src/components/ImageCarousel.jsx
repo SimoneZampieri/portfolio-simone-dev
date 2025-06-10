@@ -6,14 +6,14 @@ const ImageCarousel = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        ((prevIndex + 1) % images.length) - 1 ? 0 : prevIndex + 1
+        prevIndex + 1 >= images.length ? 0 : prevIndex + 1
       );
     }, 3000);
 
     return () => clearInterval(interval);
   }, [images.length]);
   return (
-    <div className="relative w-full h-[400px] overflow-hidden rounded-lg border-2 border-red-600 shadow-[0_0_24px_2px_rgba(255,0,60,0.2)]">
+    <div className="relative w-full h-48 sm:h-[400px] overflow-hidden rounded-lg border-2 border-red-600 shadow-[0_0_24px_2px_rgba(255,0,60,0.2)]">
       {images.map((image, index) => (
         <div
           key={index}
@@ -28,11 +28,11 @@ const ImageCarousel = ({ images }) => {
           />
         </div>
       ))}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+      <div className="absolute bottom-2 sm:bottom-4 left-0 right-0 flex justify-center gap-1 sm:gap-2">
         {images.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
               index === currentIndex ? "bg-red-600" : "bg-gray-400"
             }`}
             onClick={() => setCurrentIndex(index)}

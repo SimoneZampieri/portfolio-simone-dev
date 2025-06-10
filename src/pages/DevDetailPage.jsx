@@ -39,37 +39,38 @@ const DevDetailPage = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-2 sm:px-4 py-8 sm:py-16">
       <div className="max-w-6xl mx-auto">
-        {/* Header Section with Side-by-side Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* Left Column - Text Content */}
+        {/* Header Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+          {/* Left Column */}
           <div className="flex flex-col justify-center">
-            <h1 className="text-5xl font-bold text-white mb-4">Chi Sono</h1>
-            <div className="w-24 h-1 bg-red-600 mb-8"></div>
-            <p className="text-gray-300 text-lg mb-6">
+            <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">
+              Chi Sono
+            </h1>
+            <div className="w-16 sm:w-24 h-1 bg-red-600 mb-6 sm:mb-8"></div>
+            <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">
               Frontend Developer appassionato di motorsport, performance e
               codice pulito
             </p>
-            <p className="text-gray-300">
+            <p className="text-gray-300 text-sm sm:text-base">
               Come un pilota in pista, mi concentro sulla precisione e
               l'efficienza in ogni riga di codice. La mia passione per il
               motorsport si riflette nel mio approccio allo sviluppo.
             </p>
           </div>
-
-          {/* Right Column - Carousel */}
-          <div className="h-full flex items-center">
+          {/* Right Column */}
+          <div className="h-48 sm:h-full flex items-center">
             <ImageCarousel images={images} />
           </div>
         </div>
 
         {/* Learning Journey Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-extrabold text-red-600 mb-4 text-center font-audiowide">
+        <div className="mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-red-600 mb-4 text-center font-audiowide">
             Il Mio Percorso di Apprendimento
           </h2>
-          <p className="text-gray-300 text-lg text-center max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-300 text-center max-w-3xl mx-auto">
             La mia avventura nello sviluppo web è iniziata con la curiosità e la
             voglia di mettermi in gioco, durante la pandemia infatti ho iniziato
             ad approfondire le basi di HTML e CSS, per poi iniziare un percorso
@@ -87,29 +88,34 @@ const DevDetailPage = () => {
         </div>
 
         {/* Experience Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-10 sm:mb-16">
           {/* Tech Stack Grid */}
-          <div className="bg-black/20 border-2 border-red-600 rounded-lg p-6 hover:shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] transition-shadow flex flex-col">
-            <h3 className="text-red-600 text-xl font-bold mb-6 text-center">
+          <div className="bg-black/20 border-2 border-red-600 rounded-lg p-4 sm:p-6 hover:shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] transition-shadow flex flex-col">
+            <h3 className="text-red-600 text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-center">
               Stack Tecnologico
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
               {techStack.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex flex-col items-center bg-black/40 border border-red-600 rounded-xl p-4 shadow-md hover:scale-105 transition-transform"
+                  className="flex flex-col items-center bg-black/40 border border-red-600 rounded-xl p-3 sm:p-4 shadow-md hover:scale-105 transition-transform"
                 >
-                  <span className="text-4xl mb-2">{tech.icon}</span>
-                  <span className="text-white font-medium">{tech.name}</span>
+                  <span className="text-3xl sm:text-4xl mb-1 sm:mb-2">
+                    {tech.icon}
+                  </span>
+                  <span className="text-white text-xs sm:text-base font-medium">
+                    {tech.name}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
-
           {/* Soft Skills Card */}
-          <div className="bg-black/20 border-2 border-red-600 rounded-lg p-6 hover:shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] transition-shadow">
-            <h3 className="text-red-600 text-xl font-bold mb-4">Soft Skills</h3>
-            <ul className="text-gray-300 space-y-2">
+          <div className="bg-black/20 border-2 border-red-600 rounded-lg p-4 sm:p-6 hover:shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] transition-shadow">
+            <h3 className="text-red-600 text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+              Soft Skills
+            </h3>
+            <ul className="text-gray-300 space-y-1 sm:space-y-2 text-sm sm:text-base">
               <li>• Problem Solving</li>
               <li>• Team Collaboration</li>
               <li>• Attenzione ai Dettagli</li>
@@ -121,11 +127,11 @@ const DevDetailPage = () => {
 
         {/* Contact Section */}
         <div className="text-center relative">
-          <h2 className="text-2xl font-bold text-white mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
             Come Contattarmi
           </h2>
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-full max-w-xl bg-black/90 border-2 border-red-600 rounded-lg shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] divide-y divide-red-600 px-2 text-left">
+          <div className="flex flex-col items-center gap-2 sm:gap-4">
+            <div className="w-full max-w-xl bg-black/90 border-2 border-red-600 rounded-lg shadow-[0_0_20px_4px_rgba(255,0,60,0.2)] divide-y divide-red-600 px-1 sm:px-2 text-left">
               {contacts.map((contact, index) => (
                 <a
                   key={index}
@@ -136,12 +142,12 @@ const DevDetailPage = () => {
                   }
                   target={contact.type !== "Email" ? "_blank" : ""}
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 hover:bg-red-600/20 transition-colors text-white"
+                  className="flex items-center gap-2 sm:gap-3 px-2 sm:px-4 py-2 sm:py-3 hover:bg-red-600/20 transition-colors text-white"
                 >
-                  <span className="text-xl">{contact.icon}</span>
+                  <span className="text-lg sm:text-xl">{contact.icon}</span>
                   <div className="min-w-0">
                     <div className="font-medium">{contact.type}</div>
-                    <div className="text-sm text-gray-300 break-all">
+                    <div className="text-xs sm:text-sm text-gray-300 break-all">
                       {contact.value}
                     </div>
                   </div>
@@ -151,7 +157,7 @@ const DevDetailPage = () => {
             <a
               href="/Zampieri Simone cv (2).pdf"
               download
-              className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold mt-2 inline-block"
+              className="block w-full sm:w-auto text-center bg-red-600 text-white px-6 sm:px-8 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold mt-2"
             >
               Scarica il mio CV
             </a>
